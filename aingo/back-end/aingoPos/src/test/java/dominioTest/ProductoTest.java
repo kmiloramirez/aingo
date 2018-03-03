@@ -14,4 +14,6 @@ public class ProductoTest {
 		assertTrue(producto.getCodigo()==4);
 		assertTrue(producto.getNombre().equals("sal"));
 	}
+	
+	
 }
