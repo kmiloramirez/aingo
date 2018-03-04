@@ -12,10 +12,13 @@ public class facturasLn {
 	private Producto producto;
 	private Factura factura;
 	private double precioFactura;
+	boolean swInclyePropina = false;
 	/*En este metodo crearemos la factura vacia solo con los campos predeterminados como
 	 * son los mensajes, la fecha, la mesa*/
 	
-	public boolean crearFactura(String header, String footer, int idMesa, double impuesto, double propina,boolean incluyePropina) {
+	public boolean crearFactura(String header, String footer, int idMesa, 
+			double impuesto, double propina) 
+	{
 		
 			factura = new Factura();
 			this.precioFactura=0;
@@ -32,10 +35,7 @@ public class facturasLn {
 			factura.setTotalBruto(0);
 			factura.setImpuesto(impuesto);
 			factura.setIdMesa(idMesa);
-			factura.setPropina(propina);
-			if (incluyePropina) {
-				
-			}
+			
 			
 		} catch (Exception e) {
 			return false;
@@ -54,9 +54,12 @@ public class facturasLn {
 		return true;
 		
 	}
-	public void finalizaFactura() {
-		factura.setPropina(precioFactura*0.1);
-		precioFactura +=factura.getPropina(); 
+	public void finalizaFactura(boolean incluyePropina) {
+		swInclyePropina = incluyePropina;
+		if(swInclyePropina) {
+			factura.setPropina(precioFactura*0.1);
+			precioFactura +=factura.getPropina(); 
+		}
 	}
 
 	
