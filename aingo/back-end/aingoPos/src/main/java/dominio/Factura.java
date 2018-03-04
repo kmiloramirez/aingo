@@ -3,9 +3,15 @@ package dominio;
 import java.util.ArrayList;
 
 public class Factura {
-	private int id;
+	private int id, idMesa;
+	public int getIdMesa() {
+		return idMesa;
+	}
+	public void setIdMesa(int idMesa) {
+		this.idMesa = idMesa;
+	}
 	private double impuesto, totalNeto, propina, totalBruto;
-	private String mesa, fecha, mensajeHeader, mensajeFooter;
+	private String fecha, mensajeHeader, mensajeFooter;
 	private ArrayList<Producto> productos;
 	public int getId() {
 		return id;
@@ -37,12 +43,7 @@ public class Factura {
 	public void setTotalBruto(double totalBruto) {
 		this.totalBruto = totalBruto;
 	}
-	public String getMesa() {
-		return mesa;
-	}
-	public void setMesa(String mesa) {
-		this.mesa = mesa;
-	}
+
 	public String getFecha() {
 		return fecha;
 	}
