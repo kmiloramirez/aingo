@@ -8,7 +8,7 @@ import dominio.Producto;
 /* en esta clase vamos a realizar la creacion y logica de una factura
  * Creada por Paulo Andres Escobar
  * */
-public class facturasLn {
+public class FacturasLn {
 	private Producto producto;
 	private Factura factura;
 	private double precioFactura;
